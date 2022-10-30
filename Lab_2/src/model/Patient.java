@@ -1,25 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
  *
- * @author visha
+ * @author saket
  */
 public class Patient {
-    private String name;
-    private int age;
-    private String email;
-    private int phone;
     
+    private String patientID;
+    private String primaryDoctorName;
+    private String prefferedPharmacy;
+    //private VitalSignHistory vitalSignHistory;
+    
+    public Patient() {
+        //this.vitalSignHistory = new VitalSignHistory();
+    }
+    
+    public String getPatientID() {
+        return patientID;
+    }
+    
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+    
+    public String getPrimaryDoctorName() {
+        return primaryDoctorName;
+    }
+    
+    public void setPrimaryDoctorName(String primaryDoctorName) {
+        this.primaryDoctorName = primaryDoctorName;
+    }
+    
+    public String getPrefferedPharmacy() {
+        return prefferedPharmacy;
+    }
+    
+    public void setPrefferedPharmacy(String prefferedPharmacy) {
+        this.prefferedPharmacy = prefferedPharmacy;
+    }
+    
+//    public VitalSignHistory getVitalSignHistory() {
+//        return vitalSignHistory;
+//    }
+//    
+//    public void setVitalSignHistory(VitalSignHistory vitalSignHistory) {
+//        this.vitalSignHistory = vitalSignHistory;
+//    }
+    
+    @Override
+    public String toString()
+    {
+        return String.valueOf(this.patientID);
+    }
 }
-public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
