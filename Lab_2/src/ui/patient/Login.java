@@ -5,7 +5,6 @@
  */
 package ui.patient;
 
-import ui.patient.PatientManagerWorkAreaJPanel;
 import model.PersonDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
