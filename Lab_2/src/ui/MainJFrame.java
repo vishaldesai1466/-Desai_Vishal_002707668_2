@@ -5,17 +5,15 @@
 */
 package ui;
 
-//import ui.patient.PatientManagerWorkAreaJPanel;
+
 import model.PersonDirectory;
 import java.awt.CardLayout;
-//import ui.patient.VitalSignReportJPanel;
-//import ui.patient.Login;
+import ui.patient.CommunityLogin;
+import ui.patient.VitalSignReportJPanel;
+import ui.patient.Login;
 import ui.person.ManagePersonsJPanel;
 
-/**
- *
- * @author akshay
- */
+
 public class MainJFrame extends javax.swing.JFrame {
     
     /**
@@ -128,10 +126,10 @@ public class MainJFrame extends javax.swing.JFrame {
 //        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
 //        layout.next(userProcessContainer);
 
-//           Login Login = new Login(userProcessContainer, personDirectory);
-//           userProcessContainer.add("Login", Login);
-//           CardLayout layout =(CardLayout) userProcessContainer.getLayout();
-//           layout.next(userProcessContainer);
+           Login Login = new Login(userProcessContainer, personDirectory);
+           userProcessContainer.add("Login", Login);
+           CardLayout layout =(CardLayout) userProcessContainer.getLayout();
+           layout.next(userProcessContainer);
     }//GEN-LAST:event_patientManagerJButtonActionPerformed
 
     private void managePersonsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePersonsJButtonActionPerformed
@@ -149,6 +147,10 @@ public class MainJFrame extends javax.swing.JFrame {
 //        userProcessContainer.add("report",report);
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        layout.next(userProcessContainer);
+        CommunityLogin CommunityLogin= new CommunityLogin(userProcessContainer, personDirectory);
+        userProcessContainer.add("CommunityLogin",CommunityLogin);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_vitalSignReportJButtonActionPerformed
     
     /**

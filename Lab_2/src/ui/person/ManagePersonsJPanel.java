@@ -13,10 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author akshay
- */
+
 public class ManagePersonsJPanel extends javax.swing.JPanel {
 
     /**
@@ -65,15 +62,28 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         searchPersonJButton = new javax.swing.JButton();
+        backJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        viewPersonsJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        editPersonJButton = new javax.swing.JButton();
+        viewPersonJButton = new javax.swing.JButton();
+        deletePersonJButton = new javax.swing.JButton();
         searchBoxJTextField = new javax.swing.JTextField();
         createPersonJButton = new javax.swing.JButton();
 
-        searchPersonJButton.setText("View Details");
+        searchPersonJButton.setText("Search Person");
         searchPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchPersonJButtonActionPerformed(evt);
+            }
+        });
+
+        backJButton.setText("<<Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
             }
         });
 
@@ -84,9 +94,48 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewPersonsJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Person Name", "Age", "Patient ID"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(viewPersonsJTable);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Persons Directory");
+
+        editPersonJButton.setText("Edit Person");
+        editPersonJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editPersonJButtonActionPerformed(evt);
+            }
+        });
+
+        viewPersonJButton.setText("View Person");
+        viewPersonJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewPersonJButtonActionPerformed(evt);
+            }
+        });
+
+        deletePersonJButton.setText("Delete Person");
+        deletePersonJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletePersonJButtonActionPerformed(evt);
+            }
+        });
 
         createPersonJButton.setText("Create Person");
         createPersonJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,35 +151,52 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
+                        .addGap(318, 318, 318)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(searchPersonJButton)
-                            .addComponent(createPersonJButton))
-                        .addGap(33, 33, 33)
-                        .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(227, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                        .addGap(107, 107, 107)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(searchPersonJButton)
+                                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(createPersonJButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(viewPersonJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(editPersonJButton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(deletePersonJButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(248, 248, 248)
+                                        .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(86, 86, 86)
-                .addComponent(createPersonJButton)
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewPersonJButton)
+                    .addComponent(editPersonJButton)
+                    .addComponent(deletePersonJButton)
+                    .addComponent(backJButton)
+                    .addComponent(createPersonJButton))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchPersonJButton)
-                    .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addComponent(refreshJButton)
-                .addContainerGap(231, Short.MAX_VALUE))
+                    .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refreshJButton))
+                .addContainerGap(417, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -163,12 +229,78 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_createPersonJButtonActionPerformed
 
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void viewPersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPersonJButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow= viewPersonsJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        Person person=(Person) viewPersonsJTable.getValueAt(selectedRow, 0);
+        /*pass userProcessContainer and Patient*/
+        ViewUpdatePersonDetailsJPanel vupersondJPanel=
+        new ViewUpdatePersonDetailsJPanel(userProcessContainer, person,Boolean.FALSE);
+        userProcessContainer.add("vupersondJPanel", vupersondJPanel);
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_viewPersonJButtonActionPerformed
+
+    private void deletePersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePersonJButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow= viewPersonsJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        Person person=(Person) viewPersonsJTable.getValueAt(selectedRow, 0);
+        /*Ask confirmation*/
+        int flag= JOptionPane.showConfirmDialog(this, "Are you sure want to remove?",
+            "Warning", JOptionPane.YES_NO_OPTION);
+        if(flag==0)
+        {
+            personDirectory.deletePerson(person);
+            populatePersonsTable(personDirectory.getPersonHistory());
+        }
+    }//GEN-LAST:event_deletePersonJButtonActionPerformed
+
+    private void editPersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPersonJButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow= viewPersonsJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        Person person=(Person) viewPersonsJTable.getValueAt(selectedRow, 0);
+        /*pass userProcessContainer and Patient*/
+        ViewUpdatePersonDetailsJPanel vupersondJPanel=
+        new ViewUpdatePersonDetailsJPanel(userProcessContainer, person,Boolean.TRUE);
+        userProcessContainer.add("vupersondJPanel", vupersondJPanel);
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_editPersonJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backJButton;
     private javax.swing.JButton createPersonJButton;
+    private javax.swing.JButton deletePersonJButton;
+    private javax.swing.JButton editPersonJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshJButton;
     private javax.swing.JTextField searchBoxJTextField;
     private javax.swing.JButton searchPersonJButton;
+    private javax.swing.JButton viewPersonJButton;
+    private javax.swing.JTable viewPersonsJTable;
     // End of variables declaration//GEN-END:variables
 }

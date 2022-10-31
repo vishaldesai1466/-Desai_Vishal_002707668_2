@@ -5,6 +5,7 @@
  */
 package ui.patient;
 
+import ui.patient.PatientManagerWorkAreaJPanel;
 import model.PersonDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -43,6 +44,7 @@ public class Login extends javax.swing.JPanel {
         txtPassword = new javax.swing.JPasswordField();
         txtUtype = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("UserName");
@@ -53,7 +55,7 @@ public class Login extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("User Type");
 
-        txtUtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor", "Hospital" }));
+        txtUtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital", "Doctor", "System" }));
         txtUtype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUtypeActionPerformed(evt);
@@ -67,29 +69,39 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Login");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(304, 304, 304)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtUserName)
                         .addComponent(txtPassword)
-                        .addComponent(txtUtype, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtUserName)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                        .addComponent(txtUtype, 0, 125, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(160, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(109, 109, 109)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -102,8 +114,8 @@ public class Login extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(txtUtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(385, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,12 +144,25 @@ public class Login extends javax.swing.JPanel {
         }
         
         if (utype.equals("Hospital")){
-            if(userName.equals("system") && password.equals("System@123")){
+            if(userName.equals("hospital") && password.equals("Hospital@123")){
           
                 ManagePatientsJPanel mpJPanel= new ManagePatientsJPanel(userProcessContainer, personDirectory);
                 userProcessContainer.add("mpJPanel", mpJPanel);
                 CardLayout layout=(CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Incorrect Credentials");
+            }
+        }
+        if (utype.equals("System")){
+            if(userName.equals("system") && password.equals("System@123")){
+          
+                PatientManagerWorkAreaJPanel pmwaJPanel=
+                new PatientManagerWorkAreaJPanel(userProcessContainer, personDirectory);
+        userProcessContainer.add("pmwaJPanel", pmwaJPanel);
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Incorrect Credentials");
@@ -155,6 +180,7 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JComboBox<String> txtUtype;

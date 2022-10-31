@@ -1,18 +1,15 @@
 package model;
 
-/**
- *
- * @author saket
- */
+
 public class Patient {
     
     private String patientID;
     private String primaryDoctorName;
     private String prefferedPharmacy;
-    //private VitalSignHistory vitalSignHistory;
+    private VitalSignHistory vitalSignHistory;
     
     public Patient() {
-        //this.vitalSignHistory = new VitalSignHistory();
+        this.vitalSignHistory = new VitalSignHistory();
     }
     
     public String getPatientID() {
@@ -39,13 +36,13 @@ public class Patient {
         this.prefferedPharmacy = prefferedPharmacy;
     }
     
-//    public VitalSignHistory getVitalSignHistory() {
-//        return vitalSignHistory;
-//    }
-//    
-//    public void setVitalSignHistory(VitalSignHistory vitalSignHistory) {
-//        this.vitalSignHistory = vitalSignHistory;
-//    }
+    public VitalSignHistory getVitalSignHistory() {
+        return vitalSignHistory;
+    }
+    
+    public void setVitalSignHistory(VitalSignHistory vitalSignHistory) {
+        this.vitalSignHistory = vitalSignHistory;
+    }
     
     @Override
     public String toString()

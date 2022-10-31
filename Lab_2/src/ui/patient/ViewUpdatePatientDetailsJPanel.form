@@ -24,39 +24,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="backJButton" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="editJButton" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="saveJButton" min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="471" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="primaryDocNameJLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="patientIDJLabel" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Component id="prefferedPharmacyJLabel" min="-2" pref="98" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="primaryDocNameJTextField" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="prefferedPharmacyJTextField" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="patientIDJTextField" min="-2" pref="150" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="AgeJLabel" min="-2" pref="122" max="-2" attributes="0"/>
-                                  <Component id="patientNameJLabel" min="-2" pref="122" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="backJButton" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="personNameJTextField" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="personAgeJTextField" min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="editJButton" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="saveJButton" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="166" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="jLabel1" min="-2" pref="471" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="-48" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,36 +63,59 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="personNameJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientNameJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="patientIDJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="patientIDJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="personAgeJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="AgeJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="primaryDocNameJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="primaryDocNameJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="editJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="prefferedPharmacyJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="prefferedPharmacyJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="saveJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="editJButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="backJButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="389" max="32767" attributes="0"/>
+              <EmptySpace pref="365" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="AgeJLabel">
+    <Component class="javax.swing.JLabel" name="patientIDJLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Age"/>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Patient ID"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="personNameJTextField">
+    <Component class="javax.swing.JLabel" name="primaryDocNameJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Primary Doctor Name"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="personAgeJTextField">
+    <Component class="javax.swing.JLabel" name="prefferedPharmacyJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Preffered Pharmacy"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="patientIDJTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientIDJTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="primaryDocNameJTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="prefferedPharmacyJTextField">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -103,11 +124,6 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Patient Details"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="patientNameJLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Patient Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton">

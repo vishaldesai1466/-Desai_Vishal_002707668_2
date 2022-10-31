@@ -6,10 +6,7 @@
 
 package model;
 
-/**
- *
- * @author saket
- */
+
 public class Person {
     private String personName;
     private int age;

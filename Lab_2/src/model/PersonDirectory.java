@@ -2,10 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author saket
- */
+
 public class PersonDirectory {
     
     private ArrayList<Person> personDirectory;
