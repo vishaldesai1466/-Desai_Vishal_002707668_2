@@ -3,24 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.patient;
+package ui.person;
 
-import ui.patient.PatientDisplay;
+import ui.patient.PatientManagerWorkAreaJPanel;
 import model.PersonDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import ui.patient.VitalSignReportJPanel;
 import ui.person.ManagePersonsJPanel;
 import javax.swing.JPanel;
+import ui.patient.ManagePatientsJPanel;
+import ui.patient.ManagePatientsJPanel;
+import ui.patient.ManageVitalSignsJPanel;
+import ui.patient.ManageVitalSignsJPanel;
+import ui.patient.PatientManagerWorkAreaJPanel;
+import ui.patient.PatientManagerWorkAreaJPanel;
 
 
-public class Login extends javax.swing.JPanel {
+public class LoginSystem extends javax.swing.JPanel {
     private PersonDirectory personDirectory;
     private JPanel userProcessContainer;
     /**
      * Creates new form Login
      */
-    public Login(JPanel userProcessContainer,
+    public LoginSystem(JPanel userProcessContainer,
             PersonDirectory personDirectory) {
         initComponents();
         this.personDirectory= personDirectory;
@@ -39,10 +45,8 @@ public class Login extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
-        txtUtype = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -54,20 +58,14 @@ public class Login extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         jLabel2.setText("Password");
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        jLabel3.setText("User Type");
-
         txtUserName.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-
-        txtPassword.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-
-        txtUtype.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        txtUtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hospital", "Doctor", "Patient" }));
-        txtUtype.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUtypeActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
+
+        txtPassword.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
@@ -81,37 +79,35 @@ public class Login extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Login");
+        jLabel4.setText("System Login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(134, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtUserName)
-                        .addComponent(txtPassword)
-                        .addComponent(txtUtype, 0, 125, Short.MAX_VALUE))
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,13 +115,9 @@ public class Login extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtUtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(79, 79, 79)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addContainerGap(368, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,60 +130,34 @@ public class Login extends javax.swing.JPanel {
 //        layout.next(userProcessContainer);
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
-        String utype = txtUtype.getSelectedItem().toString();
+       
         
-        if (utype.equals("Doctor")){
-            if(userName.equals("doctor") && password.equals("Doctor@1")){
         
-                ManageVitalSignsJPanel mvsJPanel= new ManageVitalSignsJPanel(userProcessContainer, personDirectory);
-                userProcessContainer.add("mvsJPanel", mvsJPanel);
-                CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Incorrect Credentials");
-            }
-        }
-        
-        if (utype.equals("Hospital")){
-            if(userName.equals("hospital") && password.equals("Hospital@123")){
+            if(userName.equals("system") && password.equals("System@123")){
           
-                ManagePatientsJPanel mpJPanel= new ManagePatientsJPanel(userProcessContainer, personDirectory);
-                userProcessContainer.add("mpJPanel", mpJPanel);
-                CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+                        ManagePersonsJPanel mpJPanel= 
+                new ManagePersonsJPanel(userProcessContainer, personDirectory);
+        userProcessContainer.add("mpJPanel", mpJPanel);
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
             }
             else{
                 JOptionPane.showMessageDialog(null, "Incorrect Credentials");
             }
-        }
-        if (utype.equals("Patient")){
-            if(userName.equals("patient") && password.equals("Patient@123")){
-          
-                PatientDisplay PatientDisplay = new PatientDisplay(userProcessContainer, personDirectory);
-                userProcessContainer.add("PatientDisplay", PatientDisplay);
-                CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Incorrect Credentials");
-            }
-        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtUtypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUtypeActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUtypeActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
-    private javax.swing.JComboBox<String> txtUtype;
     // End of variables declaration//GEN-END:variables
 }

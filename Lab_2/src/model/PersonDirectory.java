@@ -41,6 +41,29 @@ public class PersonDirectory {
                     searchPatientDirectory.add(person);
                 }
             }
+            if(String.valueOf(person.getAge()).toLowerCase().startsWith(key.toLowerCase()))
+            {
+                if(person.getPatient()!=null)
+                {
+                    searchPatientDirectory.add(person);
+                }
+            }
+            if(String.valueOf(person.getweight()).toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPatientDirectory.add(person);
+            }
+            if(person.getCity().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPatientDirectory.add(person);
+            }
+            if(person.getCommunity().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPatientDirectory.add(person);
+            }
+            if(person.getAddress().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPatientDirectory.add(person);
+            }
         }
         return searchPatientDirectory;
     }
@@ -54,7 +77,28 @@ public class PersonDirectory {
             {
                 searchPersonDirectory.add(person);
             }
+            if(String.valueOf(person.getAge()).toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
+            if(String.valueOf(person.getweight()).toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
+            if(person.getCity().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
+            if(person.getCommunity().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
+            if(person.getAddress().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
         }
+        
         return searchPersonDirectory;
     }
 }

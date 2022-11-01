@@ -8,10 +8,11 @@ package ui;
 
 import model.PersonDirectory;
 import java.awt.CardLayout;
+import java.awt.Color;
 import ui.patient.CommunityLogin;
 import ui.patient.VitalSignReportJPanel;
 import ui.patient.Login;
-import ui.person.ManagePersonsJPanel;
+import ui.person.LoginSystem;
 
 
 public class MainJFrame extends javax.swing.JFrame {
@@ -22,7 +23,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private PersonDirectory personDirectory;
     public MainJFrame() {
         initComponents();
-        this.setExtendedState(MAXIMIZED_BOTH);
+        
         personDirectory= new PersonDirectory();
     }
     
@@ -46,27 +47,63 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 500));
 
-        jSplitPane1.setMinimumSize(new java.awt.Dimension(700, 700));
-        jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
+        jSplitPane1.setBackground(new java.awt.Color(153, 153, 255));
+        jSplitPane1.setBorder(new javax.swing.border.MatteBorder(null));
+        jSplitPane1.setMinimumSize(new java.awt.Dimension(1000, 600));
+        jSplitPane1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        leftJPanel.setMinimumSize(new java.awt.Dimension(200, 700));
-        leftJPanel.setPreferredSize(new java.awt.Dimension(200, 700));
+        leftJPanel.setBackground(new java.awt.Color(204, 204, 255));
+        leftJPanel.setMinimumSize(new java.awt.Dimension(200, 600));
+        leftJPanel.setPreferredSize(new java.awt.Dimension(200, 600));
 
-        patientManagerJButton.setText("Patients Directory");
+        patientManagerJButton.setBackground(new java.awt.Color(102, 102, 255));
+        patientManagerJButton.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        patientManagerJButton.setText("Hospital");
+        patientManagerJButton.setBorderPainted(false);
+        patientManagerJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                patientManagerJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                patientManagerJButtonMouseExited(evt);
+            }
+        });
         patientManagerJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientManagerJButtonActionPerformed(evt);
             }
         });
 
-        managePersonsJButton.setText("Person Directory");
+        managePersonsJButton.setBackground(new java.awt.Color(102, 102, 255));
+        managePersonsJButton.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        managePersonsJButton.setText("System Login");
+        managePersonsJButton.setBorderPainted(false);
+        managePersonsJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managePersonsJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managePersonsJButtonMouseExited(evt);
+            }
+        });
         managePersonsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managePersonsJButtonActionPerformed(evt);
             }
         });
 
-        vitalSignReportJButton.setText("Dashboard");
+        vitalSignReportJButton.setBackground(new java.awt.Color(102, 102, 255));
+        vitalSignReportJButton.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        vitalSignReportJButton.setText("Community");
+        vitalSignReportJButton.setBorderPainted(false);
+        vitalSignReportJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                vitalSignReportJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                vitalSignReportJButtonMouseExited(evt);
+            }
+        });
         vitalSignReportJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vitalSignReportJButtonActionPerformed(evt);
@@ -81,16 +118,14 @@ public class MainJFrame extends javax.swing.JFrame {
         leftJPanelLayout.setHorizontalGroup(
             leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(vitalSignReportJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(vitalSignReportJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftJPanelLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32))
         );
         leftJPanelLayout.setVerticalGroup(
             leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,13 +138,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(patientManagerJButton)
                 .addGap(26, 26, 26)
                 .addComponent(vitalSignReportJButton)
-                .addContainerGap(444, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftJPanel);
 
-        userProcessContainer.setMinimumSize(new java.awt.Dimension(500, 700));
-        userProcessContainer.setPreferredSize(new java.awt.Dimension(500, 700));
+        userProcessContainer.setBackground(new java.awt.Color(153, 153, 255));
+        userProcessContainer.setPreferredSize(new java.awt.Dimension(800, 600));
         userProcessContainer.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(userProcessContainer);
 
@@ -134,11 +169,16 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void managePersonsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePersonsJButtonActionPerformed
         // TODO add your handling code here:
-        ManagePersonsJPanel mpJPanel= 
-                new ManagePersonsJPanel(userProcessContainer, personDirectory);
-        userProcessContainer.add("mpJPanel", mpJPanel);
-        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+//        ManagePersonsJPanel mpJPanel= 
+//                new ManagePersonsJPanel(userProcessContainer, personDirectory);
+//        userProcessContainer.add("mpJPanel", mpJPanel);
+//        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
+            LoginSystem LoginSystem = new LoginSystem(userProcessContainer, personDirectory);
+            userProcessContainer.add("LoginSystem", LoginSystem);
+            CardLayout layout =(CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+            
     }//GEN-LAST:event_managePersonsJButtonActionPerformed
 
     private void vitalSignReportJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitalSignReportJButtonActionPerformed
@@ -152,7 +192,37 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_vitalSignReportJButtonActionPerformed
-    
+
+    private void managePersonsJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managePersonsJButtonMouseEntered
+        // TODO add your handling code here:
+        managePersonsJButton.setForeground(Color.white);
+    }//GEN-LAST:event_managePersonsJButtonMouseEntered
+
+    private void managePersonsJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managePersonsJButtonMouseExited
+        // TODO add your handling code here:
+        managePersonsJButton.setForeground(Color.black);
+    }//GEN-LAST:event_managePersonsJButtonMouseExited
+
+    private void patientManagerJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientManagerJButtonMouseEntered
+        // TODO add your handling code here:
+        patientManagerJButton.setForeground(Color.white);
+    }//GEN-LAST:event_patientManagerJButtonMouseEntered
+
+    private void patientManagerJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_patientManagerJButtonMouseExited
+        // TODO add your handling code here:
+        patientManagerJButton.setForeground(Color.black);
+    }//GEN-LAST:event_patientManagerJButtonMouseExited
+
+    private void vitalSignReportJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vitalSignReportJButtonMouseEntered
+        // TODO add your handling code here:
+        vitalSignReportJButton.setForeground(Color.white);
+    }//GEN-LAST:event_vitalSignReportJButtonMouseEntered
+
+    private void vitalSignReportJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vitalSignReportJButtonMouseExited
+        // TODO add your handling code here:
+        vitalSignReportJButton.setForeground(Color.black);
+    }//GEN-LAST:event_vitalSignReportJButtonMouseExited
+   
     /**
      * @param args the command line arguments
      */
@@ -186,6 +256,7 @@ public class MainJFrame extends javax.swing.JFrame {
             public void run() {
                 new MainJFrame().setVisible(true);
             }
+            
         });
     }
 

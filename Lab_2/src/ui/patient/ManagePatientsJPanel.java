@@ -74,7 +74,6 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         viewPersonsJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         editPatientJButton = new javax.swing.JButton();
         viewPatientJButton = new javax.swing.JButton();
         deletePatientJButton = new javax.swing.JButton();
@@ -83,9 +82,11 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         createPatientJButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(500, 700));
-        setPreferredSize(new java.awt.Dimension(500, 700));
+        setBackground(new java.awt.Color(153, 153, 255));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
         viewPersonsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,98 +114,124 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             viewPersonsJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage Patients");
-
+        editPatientJButton.setBackground(new java.awt.Color(102, 102, 255));
+        editPatientJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         editPatientJButton.setText("Edit Patient");
+        editPatientJButton.setBorderPainted(false);
         editPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editPatientJButtonActionPerformed(evt);
             }
         });
 
+        viewPatientJButton.setBackground(new java.awt.Color(102, 102, 255));
+        viewPatientJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         viewPatientJButton.setText("View Patient");
+        viewPatientJButton.setBorderPainted(false);
         viewPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewPatientJButtonActionPerformed(evt);
             }
         });
 
+        deletePatientJButton.setBackground(new java.awt.Color(102, 102, 255));
+        deletePatientJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         deletePatientJButton.setText("Delete Patient");
+        deletePatientJButton.setBorderPainted(false);
         deletePatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletePatientJButtonActionPerformed(evt);
             }
         });
 
+        searchBoxJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+
+        searchPatientJButton.setBackground(new java.awt.Color(102, 102, 255));
+        searchPatientJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         searchPatientJButton.setText("Search Patient");
+        searchPatientJButton.setBorderPainted(false);
         searchPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchPatientJButtonActionPerformed(evt);
             }
         });
 
+        backJButton.setBackground(new java.awt.Color(102, 102, 255));
+        backJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         backJButton.setText("<<Back");
+        backJButton.setBorderPainted(false);
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
 
+        refreshJButton.setBackground(new java.awt.Color(102, 102, 255));
+        refreshJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         refreshJButton.setText("Refresh");
+        refreshJButton.setBorderPainted(false);
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
 
+        createPatientJButton.setBackground(new java.awt.Color(102, 102, 255));
+        createPatientJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         createPatientJButton.setText("Create Patient");
+        createPatientJButton.setBorderPainted(false);
         createPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createPatientJButtonActionPerformed(evt);
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Manage Patients");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(156, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(createPatientJButton)
+                                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(viewPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(searchBoxJTextField)
+                                    .addComponent(editPatientJButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(searchPatientJButton)
+                                    .addComponent(deletePatientJButton))))
+                        .addGap(0, 152, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createPatientJButton)
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(viewPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchBoxJTextField)
-                    .addComponent(editPatientJButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchPatientJButton)
-                    .addComponent(deletePatientJButton))
-                .addGap(166, 166, 166))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewPatientJButton)
                     .addComponent(editPatientJButton)
@@ -216,7 +243,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                     .addComponent(refreshJButton)
                     .addComponent(searchPatientJButton)
                     .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -353,7 +380,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton createPatientJButton;
     private javax.swing.JButton deletePatientJButton;
     private javax.swing.JButton editPatientJButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshJButton;
     private javax.swing.JTextField searchBoxJTextField;

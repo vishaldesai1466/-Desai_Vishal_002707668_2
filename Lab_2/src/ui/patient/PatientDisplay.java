@@ -1,10 +1,9 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ui.patient;
-
 import model.StringVerifier;
 import model.Patient;
 import model.Person;
@@ -27,17 +26,19 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+/**
+ *
+ * @author visha
+ */
+public class PatientDisplay extends javax.swing.JPanel {
 
-
-public class ManageVitalSignsJPanel extends javax.swing.JPanel {
-    
     /**
-     * Creates new form VitalSignManagerJJPanel
+     * Creates new form PatientDisplay
      */
     private PersonDirectory personDirectory;
     private JPanel userProcessContainer;
     
-    public ManageVitalSignsJPanel(JPanel userProcessContainer, PersonDirectory personDirectory) {
+    public PatientDisplay(JPanel userProcessContainer, PersonDirectory personDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.personDirectory= personDirectory;
@@ -47,7 +48,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         populatePatientsTable(personList);
         populateVitalSignTable(null);
     }
-    
     private void populatePatientsTable(ArrayList<Person> personList) {
         DefaultTableModel model = (DefaultTableModel) viewPatientsJTable.getModel();
         model.setRowCount(0);
@@ -102,7 +102,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         }
     }
-    
     private String VitalSignStatus(int patientAge, VitalSign vitalSign) {
         String vitalSignStatus = "Normal";
         
@@ -125,10 +124,8 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         displayDetailsJButton = new javax.swing.JButton();
-        editVitalSignsJButton = new javax.swing.JButton();
-        addVitalSignsJButton = new javax.swing.JButton();
-        deleteVitalSignJButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewPatientsJTable = new javax.swing.JTable();
         backJButton = new javax.swing.JButton();
@@ -141,8 +138,10 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         refreshPatientsJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 153, 255));
-        setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 
         displayDetailsJButton.setBackground(new java.awt.Color(102, 102, 255));
         displayDetailsJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
@@ -151,36 +150,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         displayDetailsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayDetailsJButtonActionPerformed(evt);
-            }
-        });
-
-        editVitalSignsJButton.setBackground(new java.awt.Color(102, 102, 255));
-        editVitalSignsJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        editVitalSignsJButton.setText("Edit Vital Signs");
-        editVitalSignsJButton.setBorderPainted(false);
-        editVitalSignsJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editVitalSignsJButtonActionPerformed(evt);
-            }
-        });
-
-        addVitalSignsJButton.setBackground(new java.awt.Color(102, 102, 255));
-        addVitalSignsJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        addVitalSignsJButton.setText("Add Vital Sign");
-        addVitalSignsJButton.setBorderPainted(false);
-        addVitalSignsJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addVitalSignsJButtonActionPerformed(evt);
-            }
-        });
-
-        deleteVitalSignJButton.setBackground(new java.awt.Color(102, 102, 255));
-        deleteVitalSignJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
-        deleteVitalSignJButton.setText("Delete Vital Sign");
-        deleteVitalSignJButton.setBorderPainted(false);
-        deleteVitalSignJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteVitalSignJButtonActionPerformed(evt);
             }
         });
 
@@ -235,10 +204,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(viewVitalSignsJTable);
-        if (viewVitalSignsJTable.getColumnModel().getColumnCount() > 0) {
-            viewVitalSignsJTable.getColumnModel().getColumn(0).setResizable(false);
-            viewVitalSignsJTable.getColumnModel().getColumn(1).setResizable(false);
-        }
 
         viewVitalSignJButton.setBackground(new java.awt.Color(102, 102, 255));
         viewVitalSignJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
@@ -282,68 +247,101 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(backJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(searchPatientJButton))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(addVitalSignsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(searchBoxJTextField))
+                                .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(displayDetailsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(refreshPatientsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
-                                .addGap(196, 196, 196))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(refreshPatientsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(217, 217, 217))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(viewVitalSignJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(editVitalSignsJButton)
-                        .addGap(12, 12, 12)
-                        .addComponent(deleteVitalSignJButton)
-                        .addGap(24, 24, 24)
+                        .addGap(262, 262, 262)
                         .addComponent(refreshVitalSignsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(480, 480, 480))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(displayDetailsJButton)
-                    .addComponent(addVitalSignsJButton)
                     .addComponent(backJButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchPatientJButton)
                     .addComponent(refreshPatientsJButton)
                     .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(115, 115, 115)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewVitalSignJButton)
-                    .addComponent(editVitalSignsJButton)
-                    .addComponent(deleteVitalSignJButton)
                     .addComponent(refreshVitalSignsJButton))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void displayDetailsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDetailsJButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = viewPatientsJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
+        Patient patient= person.getPatient();
+        if(patient!=null)
+        {
+            populateVitalSignTable(person);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Patient not created, Please create "
+                + "Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_displayDetailsJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         // TODO add your handling code here:
@@ -357,116 +355,21 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         int selectedRow = viewVitalSignsJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row from table.",
-                    "Error", JOptionPane.INFORMATION_MESSAGE);
+                "Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         VitalSign vitalSign = (VitalSign) viewVitalSignsJTable.getValueAt(selectedRow, 0);
         ViewUpdateVitalSignsJPanel vuvsJPanel = new ViewUpdateVitalSignsJPanel(userProcessContainer,
-                vitalSign, Boolean.FALSE);
+            vitalSign, Boolean.FALSE);
         userProcessContainer.add("vuvsJPanel", vuvsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_viewVitalSignJButtonActionPerformed
 
-    private void editVitalSignsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVitalSignsJButtonActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = viewVitalSignsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row from table.",
-                    "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        VitalSign vitalSign = (VitalSign) viewVitalSignsJTable.getValueAt(selectedRow, 0);
-        
-        ViewUpdateVitalSignsJPanel vuvsJPanel = new ViewUpdateVitalSignsJPanel(userProcessContainer,
-                vitalSign, Boolean.TRUE);
-        userProcessContainer.add("vuvsJPanel", vuvsJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_editVitalSignsJButtonActionPerformed
-
-    private void addVitalSignsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVitalSignsJButtonActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = viewPatientsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row from table.",
-                    "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-        Patient patient= person.getPatient();
-        if(patient!=null)
-        {
-            CreateVitalSignJPanel cvsJPanel = new CreateVitalSignJPanel(userProcessContainer, patient);
-            person.setHasVitalSigns(true);
-            userProcessContainer.add("cvsJPanel", cvsJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Patient not created, Please create"
-                    + " Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_addVitalSignsJButtonActionPerformed
-
-    private void displayDetailsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayDetailsJButtonActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = viewPatientsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row from table.",
-                    "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-        Patient patient= person.getPatient();
-        if(patient!=null)
-        {
-            populateVitalSignTable(person);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Patient not created, Please create "
-                    + "Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_displayDetailsJButtonActionPerformed
-
-    private void deleteVitalSignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteVitalSignJButtonActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = viewPatientsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row from table.");
-            return;
-        }
-        Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-        Patient patient= person.getPatient();
-        if(patient==null)
-        {
-            JOptionPane.showMessageDialog(this, "Patient not created, Please create"
-                    + " Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        selectedRow = viewVitalSignsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Please select a row from table.",
-                    "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        VitalSign vitalSign = (VitalSign) viewVitalSignsJTable.getValueAt(selectedRow, 0);
-        
-        int flag= JOptionPane.showConfirmDialog(this, "Are you sure want to remove?",
-                "Warning", JOptionPane.YES_NO_OPTION);
-        if(flag==0)
-        {
-            patient.getVitalSignHistory().deleteVitalSign(vitalSign);
-            refreshVialSigns();
-        }
-    }//GEN-LAST:event_deleteVitalSignJButtonActionPerformed
-
     private void refreshVitalSignsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshVitalSignsJButtonActionPerformed
         // TODO add your handling code here:
-        refreshVialSigns();
+        searchBoxJTextField.setText("");
+        populatePatientsTable(personDirectory.getPersonHistory());
     }//GEN-LAST:event_refreshVitalSignsJButtonActionPerformed
 
     private void searchPatientJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPatientJButtonActionPerformed
@@ -487,24 +390,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         searchBoxJTextField.setText("");
         populatePatientsTable(personDirectory.getPersonHistory());
     }//GEN-LAST:event_refreshPatientsJButtonActionPerformed
-    private void refreshVialSigns() {
-        int selectedRow = viewPatientsJTable.getSelectedRow();
-        if (selectedRow < 0) {
-            populateVitalSignTable(null);
-        } else {
-            Person person = (Person) viewPatientsJTable.getValueAt(selectedRow, 0);
-            Patient patient= person.getPatient();
-            if(patient!=null)
-            {
-                populateVitalSignTable(person);
-            }
-            else
-            {
-                populateVitalSignTable(null);
-            }
-        }
-    }
-    
     private void createChart()
     {
         DefaultCategoryDataset vitalSignDataset=new DefaultCategoryDataset();
@@ -554,11 +439,9 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addVitalSignsJButton;
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton deleteVitalSignJButton;
     private javax.swing.JButton displayDetailsJButton;
-    private javax.swing.JButton editVitalSignsJButton;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton refreshPatientsJButton;

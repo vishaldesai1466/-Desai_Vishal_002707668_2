@@ -51,7 +51,6 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
 
         personAgeJTextField = new javax.swing.JTextField();
         addPersonJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         patientNameJLabel = new javax.swing.JLabel();
         AgeJLabel = new javax.swing.JLabel();
         pesonNameJTextField = new javax.swing.JTextField();
@@ -64,101 +63,122 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         personCommunityJTextField = new javax.swing.JLabel();
         personCommunityjComboBox = new javax.swing.JComboBox<>();
         personCityjComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(500, 700));
-        setPreferredSize(new java.awt.Dimension(500, 700));
+        setBackground(new java.awt.Color(153, 153, 255));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
+        personAgeJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+
+        addPersonJButton.setBackground(new java.awt.Color(102, 102, 255));
+        addPersonJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         addPersonJButton.setText("Create Profile");
+        addPersonJButton.setBorderPainted(false);
         addPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addPersonJButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Create Person Profile");
-
+        patientNameJLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         patientNameJLabel.setText("Person Name: ");
 
+        AgeJLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         AgeJLabel.setText("Age : ");
 
+        pesonNameJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+
+        backJButton.setBackground(new java.awt.Color(102, 102, 255));
+        backJButton.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         backJButton.setText("Back");
+        backJButton.setBorderPainted(false);
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
 
+        weightjLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         weightjLabel.setText("Weight: ");
 
+        personWeightJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         personWeightJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personWeightJTextFieldActionPerformed(evt);
             }
         });
 
+        addressjLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         addressjLabel.setText("Address:");
 
+        cityjLabel.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         cityjLabel.setText("City:");
 
+        personAddressJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+
+        personCommunityJTextField.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
         personCommunityJTextField.setText("Community:");
 
-        personCommunityjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Fenway", "Downtown", "Kenmore", "West Salem", "South Salem" }));
+        personCommunityjComboBox.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        personCommunityjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select an option--", "Roxbury", "Fenway", "Downtown", "Kenmore", "West Salem", "South Salem" }));
         personCommunityjComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personCommunityjComboBoxActionPerformed(evt);
             }
         });
 
-        personCityjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boston", "Salem" }));
+        personCityjComboBox.setFont(new java.awt.Font("Leelawadee UI", 0, 12)); // NOI18N
+        personCityjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select an option--", "Boston", "Salem" }));
         personCityjComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personCityjComboBoxActionPerformed(evt);
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Create Person Profile");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AgeJLabel)
+                            .addComponent(patientNameJLabel)
+                            .addComponent(weightjLabel)
+                            .addComponent(addressjLabel)
+                            .addComponent(cityjLabel)
+                            .addComponent(personCommunityJTextField))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(personAgeJTextField)
+                            .addComponent(pesonNameJTextField)
+                            .addComponent(personWeightJTextField)
+                            .addComponent(personAddressJTextField)
+                            .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(personCityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(286, 286, 286)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(AgeJLabel)
-                                    .addComponent(patientNameJLabel)
-                                    .addComponent(weightjLabel)
-                                    .addComponent(addressjLabel)
-                                    .addComponent(cityjLabel)
-                                    .addComponent(personCommunityJTextField))
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(personAgeJTextField)
-                                    .addComponent(pesonNameJTextField)
-                                    .addComponent(personWeightJTextField)
-                                    .addComponent(personAddressJTextField)
-                                    .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(personCityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(317, 317, 317)
-                                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(addPersonJButton)))
-                        .addGap(0, 270, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(31, 31, 31)
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(addPersonJButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesonNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,25 +192,22 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addComponent(personWeightJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(weightjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addressjLabel)
-                    .addComponent(personAddressJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(personAddressJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addressjLabel))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(personCityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cityjLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cityjLabel)
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(personCityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(personCommunityJTextField)
-                    .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(personCommunityJTextField))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backJButton)
                     .addComponent(addPersonJButton))
-                .addGap(363, 363, 363))
+                .addGap(200, 200, 200))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -252,6 +269,40 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
 
     private void personCityjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personCityjComboBoxActionPerformed
         // TODO add your handling code here:
+        try{
+            if (personCityjComboBox.getSelectedItem().equals("--Select an option--"))
+            {   personCommunityjComboBox.removeAllItems();
+
+                personCommunityjComboBox.addItem("Please Select a city first");
+                
+
+            }
+
+            
+            if (personCityjComboBox.getSelectedItem().equals("Boston"))
+            {   personCommunityjComboBox.removeAllItems();
+
+                personCommunityjComboBox.addItem("Roxbury");
+                personCommunityjComboBox.addItem("Fenway");
+                personCommunityjComboBox.addItem("Downtown");
+                personCommunityjComboBox.addItem("Kenmore");
+
+            }
+            else
+            if (personCityjComboBox.getSelectedItem().equals("Salem"))
+            {   personCommunityjComboBox.removeAllItems();
+
+                personCommunityjComboBox.addItem("West Salem");
+                personCommunityjComboBox.addItem("South Salem");
+                
+
+            }
+           
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_personCityjComboBoxActionPerformed
     
 
@@ -261,7 +312,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel addressjLabel;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel cityjLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel patientNameJLabel;
     private javax.swing.JTextField personAddressJTextField;
     private javax.swing.JTextField personAgeJTextField;
